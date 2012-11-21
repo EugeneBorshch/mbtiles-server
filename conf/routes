@@ -5,7 +5,7 @@
 # Home page
 GET     /                           controllers.Application.index
 
-GET     /tile/:x/:y/:z              controllers.Application.tile(x:Int, y:Int, z:Int)
+GET     /tile/:col/:row/:level      controllers.Application.tile(col:Int, row:Int, level:Int)
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               controllers.Assets.at(path="/public", file)
+GET     /example/*file               controllers.Assets.at(path="/public", file)

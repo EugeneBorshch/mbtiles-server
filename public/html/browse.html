@@ -1,0 +1,76 @@
+<!doctype html>
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>MBTiles Server Demo Browser</title>
+
+    <link href="../stylesheets/main.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="../stylesheets/leaflet.css" media="all" rel="stylesheet" type="text/css"/>
+    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" media="all" rel="stylesheet"
+          type="text/css"/>
+
+    <link href="http://fonts.googleapis.com/css?family=Arvo|Signika:300" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans|PT+Serif:400,400italic&subset=latin,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+
+    <script type="text/javascript" src="../javascripts/leaflet.js"></script>
+
+
+</head>
+<body>
+
+<header>
+
+</header>
+
+
+<div>
+
+
+    <div class="row">
+
+        <div id="map-container" class="span16 offset2">
+            <div id="map" style="width: 900px; height: 600px"></div>
+        </div>
+    </div>
+
+
+</div>
+<!-- /container -->
+
+<footer>
+    <div id="slogan">
+        Транспортная сеть Вашего города!
+    </div>
+    &copy; 2012 <a href="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a><br/>
+
+    <div id="follow">
+        Also find us on <a href="" title="On Facebook" target="_blank">Facebook</a>
+        and <a href="" title="On Twitter"
+               target="_blank">Twitter</a> &middot; <a href="/about#contact">Contact</a>
+    </div>
+</footer>
+
+
+<script type="text/javascript">
+
+    // set up the map
+    var map = new L.Map('map');
+
+    // create the tile layer with correct attribution
+    var url = '../../../tile/{x}/{y}/{z}';
+    var attribution = 'Map data Â© OpenStreetMap contributors';
+    var layer = new L.TileLayer(url, {minZoom:11, maxZoom:16, attribution:attribution, tms:true});
+
+    // start the map in Odessa
+    map.setView(new L.LatLng(46.3071, 30.5914), 11);
+    map.addLayer(layer);
+
+</script>
+
+
+</body>
+</html>
+
