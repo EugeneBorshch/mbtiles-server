@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <title>MBTiles Server Demo Browser</title>
 
-    <link href="../stylesheets/main.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="../stylesheets/leaflet.css" media="all" rel="stylesheet" type="text/css"/>
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" media="all" rel="stylesheet"
           type="text/css"/>
@@ -51,17 +50,27 @@
 
 <script type="text/javascript">
 
-    // set up the map
+    // Set up the map
     var map = new L.Map('map');
 
-    // create the tile layer with correct attribution
+    // Setup MBTiles streaming server
     var url = '../../../tile/{x}/{y}/{z}';
-    var attribution = 'Map data Â© OpenStreetMap contributors';
-    var layer = new L.TileLayer(url, {minZoom:11, maxZoom:16, attribution:attribution, tms:true});
 
-    // start the map in Odessa
-    map.setView(new L.LatLng(46.3071, 30.5914), 11);
-    map.addLayer(layer);
+    var attribution = 'Map data Â© OpenStreetMap contributors';
+
+    var layer = new L.TileLayer(url, {minZoom:12, maxZoom:16, attribution:attribution, tms:true});
+
+    // Start the map in Odessa
+    map.setView(new L.LatLng(46.4741, 30.7405), 14);
+
+    // Test map is small so we can narrow boundaries
+    var southWest = new L.LatLng(46.3377, 30.6477);
+    var northEast = new L.LatLng(46.6313, 30.8366);
+    var bounds = new L.LatLngBounds(southWest, northEast);
+
+    map.setMaxBounds(bounds);
+    map.addLayer(layer)
+
 
 </script>
 

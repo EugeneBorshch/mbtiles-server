@@ -17,18 +17,20 @@ import akka.pattern.ask
 
 object Application extends Controller {
 
+  val headers: Map[String, String] = Map(CONTENT_TYPE -> "image/png", "Access-Control-Allow-Origin" -> "*")
+
   def index = Action {
     Ok("Hello ^.^ ")
   }
 
   def tile(col: Int, row: Int, level: Int) = Action {
 
-    val myActor = Akka.system.actorOf(Props[TileActor])
-
     implicit val timeout = Timeout(5 seconds)
 
+    val tileActor = Akka.system.actorOf(Props[TileActor])
+
     Async {
-      (myActor ? TileQuery(col, row, level)).mapTo[Option[Array[Byte]]].asPromise.map {
+      (tileActor ? TileQuery(col, row, level)).mapTo[Option[Array[Byte]]].asPromise.map {
         response => prepareResponse(response)
       }
     }
@@ -36,14 +38,15 @@ object Application extends Controller {
   }
 
   def prepareResponse(response: Option[Array[Byte]]): SimpleResult[Array[Byte]] = {
+
     response match {
       case None => SimpleResult(
-        header = ResponseHeader(200, Map(CONTENT_TYPE -> "image/png")),
+        header = ResponseHeader(200, headers),
         body = Enumerator()
       )
       case Some(s) =>
         SimpleResult(
-          header = ResponseHeader(200, Map(CONTENT_TYPE -> "image/png")),
+          header = ResponseHeader(200, headers),
           body = Enumerator(s)
         )
     }
