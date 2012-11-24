@@ -4,7 +4,7 @@ MBTiles Server
 Minimalistic and “easy to use” server for streaming `MBTiles`_ maps.
 
 This app alows you to quickly deploy and stream maps created by
-`TileMill`_ (or analogue) on your web site.
+`TileMill`_ (or analogue) in web eviroment / on your web site.
 
 Use case
 ~~~~~~~~
@@ -83,9 +83,9 @@ Integration
 ~~~~~~~~~~~
 
 You can integrate your map into the web page using `Leaflet.js`_ or
-analogue libraries: \`\`\`html
+analogue libraries:
 
-.. raw:: html
+::
 
    <script type="text/javascript">
 
@@ -106,7 +106,6 @@ analogue libraries: \`\`\`html
 
    </script>
 
-\`\`\`
 
 Live Demo
 ---------
@@ -115,7 +114,6 @@ You can checkout live demo `here`_
 
 .. _MBTiles: https://github.com/mapbox/mbtiles-spec
 .. _TileMill: http://mapbox.com/tilemill/
-.. _TileMill: http://mapbox.com/tilemill/docs/crashcourse/introduction/
 .. _Play: http://www.playframework.org
 .. _Akka: http://akka.io
 .. _Leaflet.js: http://leafletjs.com
