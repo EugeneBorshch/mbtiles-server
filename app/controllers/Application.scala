@@ -17,7 +17,11 @@ import akka.pattern.ask
 
 object Application extends Controller {
 
-  val headers: Map[String, String] = Map(CONTENT_TYPE -> "image/png", "Access-Control-Allow-Origin" -> "*")
+  val headers: Map[String, String] = Map(
+    CONTENT_TYPE -> "image/png",
+    "Access-Control-Allow-Origin" -> "*",
+    ALLOW -> "GET"
+  )
 
   def index = Action {
     Ok("Hello ^.^ ")
