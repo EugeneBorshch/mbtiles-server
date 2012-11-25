@@ -10,7 +10,7 @@ import data.{TileAccessor, TileQuery}
  * User: Eugene Borshch
  * Date: 11/21/12
  */
-class TileActor extends Actor {
+class TileActor(val tileAccessor: TileAccessor) extends Actor {
 
 
   def receive = {
@@ -19,7 +19,7 @@ class TileActor extends Actor {
     case tileQuery: TileQuery => {
 
       //query database for tile image
-      val tile = TileAccessor.getTile(tileQuery)
+      val tile = tileAccessor.getTile(tileQuery)
       sender ! tile
     }
     // if we've received bad request

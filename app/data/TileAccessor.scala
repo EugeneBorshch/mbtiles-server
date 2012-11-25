@@ -5,13 +5,23 @@ import play.api.db.DB
 import play.api.Play.current
 
 /**
+ * Access tile images
+ *
+ */
+abstract class TileAccessor {
+  def getTile(tile: TileQuery): Option[Array[Byte]]
+}
+
+
+
+/**
  * Access MBTiles SqLite database.
  *
  * User: Eugene Borshch
  *
  * Date: 21.11.12
  */
-object TileAccessor {
+object MBTileAccessor  extends  TileAccessor{
 
   /**
    * Query database to get tile image.
