@@ -17,7 +17,7 @@ class Test extends Specification {
   "TileApplication" should {
 
     "return OK for existing tiles" in {
-      running(FakeApplication()) {
+      running(FakeApplication(additionalConfiguration = Map("db.default.url" -> "jdbc:sqlite:"))) {
         val unknResult = new TileApplication(FakeTileAccessor).tile(1, 1, 1)(FakeRequest())
         val result = getResult(unknResult)
         status(result) must equalTo(OK)
@@ -28,7 +28,7 @@ class Test extends Specification {
 
 
     "return NO_CONTENT for tiles that are out of bounds" in {
-      running(FakeApplication()) {
+      running(FakeApplication(additionalConfiguration = Map("db.default.url" -> "jdbc:sqlite:"))) {
         val unknResult = new TileApplication(FakeTileAccessor).tile(2, 2, 2)(FakeRequest())
         val result = getResult(unknResult)
         status(result) must equalTo(NO_CONTENT)
