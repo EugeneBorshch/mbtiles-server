@@ -4,16 +4,22 @@
 
 Minimalistic and "easy to use" server for streaming [MBTiles](https://github.com/mapbox/mbtiles-spec) maps.
 
-This app alows you to quickly deploy and stream maps created by [TileMill](http://mapbox.com/tilemill/) (or analogue) in web eviroment / on your web site.
+This app allows you to quickly deploy and stream maps created by [TileMill](http://mapbox.com/tilemill/) (or similiar) on your web site.
 
 ###Use case
-This application should help in situations when custom looking maps are required on your web site
+This application should help in situations when custom looking maps are required
 and Google, Bingo etc... maps can't help you with this.
 So the suggested approach would be:
 
  * find the geographic data source (e.g. Open Street Maps)
  * style and create MBTiles database using [TileMill](http://mapbox.com/tilemill/docs/crashcourse/introduction/)
  * stream the database with **MBTiles Server**
+
+
+##Live Demo
+
+Live demo can be found here [here](http://mbtilesserver-eugeneborshch.rhcloud.com/example/html/browse.html)
+
 
 ##Features
  * Powered by [Play](http://www.playframework.org) and [Akka](http://akka.io) frameworks
@@ -22,7 +28,7 @@ So the suggested approach would be:
  * Can be easily integrated with map viewer libraries like [Leaflet.js](http://leafletjs.com)
 
 
-##Instalation & Usage
+##Installation & Usage
 
 ### Build 
 
@@ -32,10 +38,10 @@ So the suggested approach would be:
 * If you have Play installed:  ``$ play clean compile stage``
 
 ### Download
-You can download compiled version from **here**
+You can download compiled version from [here](https://github.com/downloads/EugeneBorshch/mbtiles-server/mbtiles-server-1.0.zip)
 
 ### Run
-* If you build from the sources: `$ cd target/`
+* If you've built from the sources: `$ cd target/`
 * If you've downloaded already compiled version: unzip it and `$ cd mbtiles-server-1.0/`
 * Run server `$ ./start -Ddb.default.url=jdbc:sqlite:<path to the mbtiles database>` 
 
@@ -61,7 +67,7 @@ Where :
 * `{level}` - zoom level
 
 ###Integration
-You can integrate your map into the web page using [Leaflet.js](http://leafletjs.com) or analogue libraries:
+You can integrate your map into the web page using [Leaflet.js](http://leafletjs.com) or similar libraries:
 ```html
 <script type="text/javascript">
 
@@ -83,7 +89,3 @@ You can integrate your map into the web page using [Leaflet.js](http://leafletjs
 </script>
 ```
 
-
-##Live Demo
-
-You can checkout live demo [here](http://mbtilesserver-eugeneborshch.rhcloud.com/example/html/browse.html)

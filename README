@@ -3,8 +3,8 @@ MBTiles Server
 
 Minimalistic and “easy to use” server for streaming `MBTiles`_ maps.
 
-This app alows you to quickly deploy and stream maps created by
-`TileMill`_ (or analogue) in web eviroment / on your web site.
+This app allows you to quickly deploy and stream maps created by
+`TileMill`_ (or analogue) on your web site.
 
 Use case
 ~~~~~~~~
@@ -25,7 +25,7 @@ Features
 -  Small code base
 -  Can be easily integrated with map viewer libraries like `Leaflet.js`_
 
-Instalation & Usage
+Installation & Usage
 -------------------
 
 Build
@@ -44,7 +44,7 @@ You can download compiled version from **here**
 Run
 ~~~
 
--  If you build from the sources: ``$ cd target/``
+-  If you’ve build from the sources: ``$ cd target/``
 -  If you’ve downloaded already compiled version: unzip it and
    ``$ cd mbtiles-server-1.0/``
 -  Run server
