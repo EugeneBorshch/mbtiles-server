@@ -20,6 +20,8 @@ So the suggested approach would be:
 
 Live demo can be found here [here](http://mbtilesserver-eugeneborshch.rhcloud.com/example/html/browse.html)
 
+Sample database that is used in the demo can be downloaded from [here](https://github.com/downloads/EugeneBorshch/mbtiles-server/Odessa.mbtiles)
+
 
 ##Features
  * Powered by [Play](http://www.playframework.org) and [Akka](http://akka.io) frameworks
