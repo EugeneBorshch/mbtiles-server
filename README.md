@@ -1,6 +1,6 @@
 #MBTiles Server
 
-[![Build Status](https://travis-ci.org/EugeneBorshch/mbtiles-server.png)](https://travis-ci.org/EugeneBorshch/mbtiles-server)
+[![Build Status](https://travis-ci.org/EugeneBorshch/mbtiles-server.png?branch=master)](https://travis-ci.org/EugeneBorshch/mbtiles-server.png?branch=master)
 
 Minimalistic and "easy to use" server for streaming [MBTiles](https://github.com/mapbox/mbtiles-spec) maps.
 
